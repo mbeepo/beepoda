@@ -4,6 +4,7 @@
 use embassy_executor::Spawner;
 use embassy_rp::{config::Config, gpio::{self, Flex, Input, Level, Output, Pin, Pull}};
 use panic_probe as _;
+use rhai;
 
 #[embassy_executor::main]
 async fn main(_spawner: Spawner) {
