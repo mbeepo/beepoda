@@ -8,7 +8,7 @@ lto = "fat"         # turn on Link-Time Optimizations
 codegen-units = 1   # trade compile time with maximum optimization
 opt-level = "z"     # optimize for size
 
-[dependencies]
+[target.thumbv6m-none-eabi.dependencies]
 embassy-executor = { version = "0.7.0", features = ["task-arena-size-98304", "arch-cortex-m", "executor-thread", "executor-interrupt"] }
 embassy-rp = { version = "0.3.0", features = [ "rt", "time-driver", "critical-section-impl", "rp2040" ] }
 embassy-futures = "0.1.1"
@@ -18,7 +18,3 @@ embassy-sync = "0.6.1"
 cortex-m = { version = "0.7.6", features = ["inline-asm"] }
 cortex-m-rt = "0.7.0"
 panic-probe = "0.3.2"
-rhai = { git = "https://github.com/rhaiscript/rhai.git", version = "1.22.2", features = ["no_std", "only_i32", "no_float"], default-features = false }
-once_cell = { version = "1.21.3", features = ["critical-section"], default-features = false }
-portable-atomic = { version = "1.11.1", features = ["critical-section"], default-features = false }
-embedded-alloc = "0.6.0"
